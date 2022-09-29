@@ -47,4 +47,6 @@ const reminderRouter = require('./routes/reminders')
 app.use('/', mainRouter)
 app.use('/:id', reminderRouter)
 
-app.listen(process.env.PORT, () => { console.log("listening") })
+app.listen(process.env.PORT || 3000, () => {
+    console.log(`server has started on port ${process.env.PORT || 3000}`)
+})
