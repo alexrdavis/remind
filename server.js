@@ -16,7 +16,7 @@ require('./config/passport')(passport)
 
 const mongoose = require('mongoose')
 
-mongoose.connect(url, { useNewUrlParser: true, dbName: 'remindProject' })
+mongoose.connect(process.env.url, { useNewUrlParser: true, dbName: 'remindProject' })
 const db = mongoose.connection
 db.on('error', err => { console.error('connection error:', err) })
 db.once('open', _ => { console.log('Database connected') })
