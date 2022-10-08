@@ -13,6 +13,7 @@
     <p>Title: <%= reminder.name %></p>
     <p>Date: <%= reminder.date.toLocaleDateString("en-US", {timeZone:"GMT"}) %></p>
     <p>Time Passed: <%= calculated.year %> years <%= calculated.months %> months <%= calculated.days %> days</p>
+    <a href="/all">Back</a>
     <script src="/main.js"></script>
 </body>
 </html>
