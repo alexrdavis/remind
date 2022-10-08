@@ -25,6 +25,7 @@
                 <div class="reminder-value" data-id='<%=reminderValue._id%>'><div class="list-group-item"><%= reminderValue.name %> <%= reminderValue.date.toLocaleDateString("en-US", {timeZone:"GMT"}) %></div>
                     <a class="reminder-delete <%= reminderValue._id %>">Delete</a>
                     <a class="reminder-edit <%= reminderValue._id %>">Edit</a>
+                    <a class="reminder-show <%= reminderValue._id %>">Show</a>
                 </div>
             </div>
         <% }) %> 

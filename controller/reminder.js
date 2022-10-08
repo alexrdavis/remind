@@ -49,5 +49,16 @@ module.exports = {
         } catch (err) {
             console.log(err)
         }
-    }
+    },
+    showReminders: async (req, res) => {
+        try {
+            const reminder = await Remind.findById({_id: req.params.id})
+            let todaysDate = new Date()
+            let eventDate = reminder.date 
+            let calculatedDates = dates.dateDiff(eventDate, todaysDate)
+            res.render("show.ejs", {reminder: reminder, calculated: calculatedDates})
+        } catch (err) {
+            console.log(err)
+        }
+    },
 }

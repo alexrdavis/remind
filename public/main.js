@@ -1,6 +1,7 @@
 const deleteBtns = document.querySelectorAll(".reminder-delete")
 const updateBtns = document.querySelectorAll(".reminder-update")
 const editBtns = document.querySelectorAll(".reminder-edit")
+const showBtns = document.querySelectorAll(".reminder-show")
 
 Array.from(deleteBtns).forEach((btn) => {
     btn.addEventListener('click', deleteReminder)
@@ -12,6 +13,10 @@ Array.from(updateBtns).forEach((btn) => {
 
 Array.from(editBtns).forEach((btn) => {
     btn.addEventListener('click', getOneReminder)
+})
+
+Array.from(showBtns).forEach((btn) => {
+    btn.addEventListener('click', showReminder)
 })
 
 async function deleteReminder() {
@@ -55,6 +60,21 @@ async function getOneReminder() {
     const reminderId = this.parentNode.dataset.id
     try {
         const response = await fetch(`/edit/${reminderId}`, {
+            method: 'get',
+            headers: {'Content-type': 'application/json'}
+        })
+        let url = response.url;
+        location.href = url
+    } catch(err) {
+        console.log(err)
+    }
+}
+
+async function showReminder() {
+    console.log("Something happened!")
+    const reminderId = this.parentNode.dataset.id
+    try {
+        const response = await fetch(`/all/showReminders/${reminderId}`, {
             method: 'get',
             headers: {'Content-type': 'application/json'}
         })
