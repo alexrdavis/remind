@@ -15,6 +15,9 @@ router.post('/reminders', reminderController.createReminders);
 // Updating reminder
 router.put('/updateReminders/:id', reminderController.updateReminders)
 
+// Show reminder
+router.get('/showReminders/:id', reminderController.showReminders)
+
 // Deleting reminder
 router.delete('/deleteReminder', reminderController.deleteReminders)
 
