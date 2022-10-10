@@ -10,3 +10,10 @@ ul {
 li {
     width: 60%;
 }
+
+.button {
+    display: flex;
+    justify-content: end;
+    width: 60%;
+    margin-top: 2rem;
+}
