@@ -1,0 +1,12 @@
+ul {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    height: 60vh;
+    align-items: center;
+    justify-content: center;
+}
+
+li {
+    width: 60%;
+}
